@@ -32,6 +32,6 @@ resource "aws_security_group" "wordpress_sg" {
   }
 
   tags = {
-    Name = "wordpress-sg-${random_id.suffix.hex}"
+    Name = "wordpress-sg"
   }
 }
