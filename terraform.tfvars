@@ -3,4 +3,4 @@ vpc_id      = "vpc-035e7a94987eef8c7"
 subnet_id   = "subnet-0a30c4f0d053630aa"
 my_ip       = "121.200.51.234/32"
 key_name    = "ubuntu_wordpress.pem"
-domain_name = "jenishj.site"gti
+domain_name = "jenishj.site"
