@@ -1,3 +1,4 @@
+#!/bin/bash
 exec > /var/log/user-data.log 2>&1
 set -eux
 
@@ -42,17 +43,14 @@ chmod -R 755 /var/www/html/wordpress
 
 cat >/etc/apache2/sites-available/wordpress.conf <<APACHE
 <VirtualHost *:80>
-    ServerName your-domain.com
-    ServerAlias www.your-domain.com
+    ServerName ${domain_name}
+    ServerAlias www.${domain_name}
     DocumentRoot /var/www/html/wordpress
 
     <Directory /var/www/html/wordpress>
         AllowOverride All
         Require all granted
     </Directory>
-
-    ErrorLog /var/log/apache2/wp_error.log
-    CustomLog /var/log/apache2/wp_access.log combined
 </VirtualHost>
 APACHE
 
@@ -64,6 +62,5 @@ cp /var/www/html/wordpress/wp-config-sample.php /var/www/html/wordpress/wp-confi
 sed -i "s/database_name_here/wordpress/" /var/www/html/wordpress/wp-config.php
 sed -i "s/username_here/wpuser/" /var/www/html/wordpress/wp-config.php
 sed -i "s/password_here/Admin@123/" /var/www/html/wordpress/wp-config.php
-
 
 echo "=== USER DATA COMPLETED SUCCESSFULLY ==="
