@@ -14,7 +14,7 @@ provider "aws" {
 }
 
 module "network" {
-  source = "../modules/network"
+  source = "../modules-dev/network"
 
   vpc_cidr            = var.vpc_cidr
   public_subnet_cidr  = var.public_subnet_cidr
@@ -22,7 +22,7 @@ module "network" {
 }
 
 module "wordpress" {
-  source = "../modules/wordpress"
+  source = "../modules-dev/wordpress"
 
   vpc_id      = module.network.vpc_id
   subnet_id   = module.network.public_subnet_id
