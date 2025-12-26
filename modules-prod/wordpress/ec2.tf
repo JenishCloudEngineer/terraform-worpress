@@ -11,6 +11,6 @@ resource "aws_instance" "wordpress" {
   })
 
   tags = {
-    Name = "wordpress-server"
+    Name = "wordpress-server-prod"
   }
 }

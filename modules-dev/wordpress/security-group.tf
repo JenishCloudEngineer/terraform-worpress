@@ -1,5 +1,5 @@
 resource "aws_security_group" "wordpress_sg" {
-  name        = "wordpress-sg"
+  name        = "wordpress-sg-DEV"
   description = "Security group for WordPress EC2"
   vpc_id      = var.vpc_id
 
@@ -32,6 +32,6 @@ resource "aws_security_group" "wordpress_sg" {
   }
 
   tags = {
-    Name = "wordpress-sg"
+    Name = "wordpress-sg-DEV"
   }
 }

@@ -7,7 +7,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "wordpress-public-rt"
+    Name = "wordpress-public-rt-DEV"
   }
 }
 

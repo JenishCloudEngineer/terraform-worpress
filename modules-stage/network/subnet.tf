@@ -5,6 +5,6 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "wordpress-public-subnet"
+    Name = "wordpress-public-subnet-STAGE"
   }
 }
